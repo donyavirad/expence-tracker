@@ -1,5 +1,8 @@
 .card{
-    padding: 3rem;
+    padding: 2rem;
     border-radius: .5rem;
     box-shadow: 0 0 .2rem .2rem var(--light-gray);
+    @media only screen and (max-width: 992px){
+        padding: 1rem;
+    }
 }

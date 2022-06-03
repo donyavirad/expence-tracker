@@ -2,7 +2,15 @@
     width: 100%;
     grid-column-start: 1;
     grid-column-end: 3;
-    
+    @media only screen and (max-width: 992px){
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+    }
+    @media only screen and (max-width: 576px){
+        grid-column-end: 1;
+        grid-row-start: 4;
+    }
     &  h2{
         padding-bottom: 1rem;
         border-bottom: .1rem solid var(--dark-gray);

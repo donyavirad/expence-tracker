@@ -15,25 +15,25 @@ const Navbar = () =>{
                 <nav className="navbar-nav">
                     <ul className="navbar-list">
                         <li className="navbar-item">
-                            <a href="/" className="navbar-item-link">
+                            <a href="#" className="navbar-item-link">
                                 <AiFillDashboard/>
                                 <span className="navbar-item-text">داشبورد</span>
                             </a>
                         </li>
                         <li className="navbar-item">
-                            <a href="/" className="navbar-item-link">
+                            <a href="#" className="navbar-item-link">
                                 <IoMdAddCircle/>
                                 <span className="navbar-item-text">افزودن</span>
                             </a>
                         </li>
                         <li className="navbar-item">
-                            <a href="/" className="navbar-item-link">
+                            <a href="#" className="navbar-item-link">
                                 <IoWallet/>
                                 <span className="navbar-item-text">کیف پول</span>
                             </a>
                         </li>
                         <li className="navbar-item">
-                            <a href="/" className="navbar-item-link">
+                            <a href="#" className="navbar-item-link">
                                 <IoSettings/>
                                 <span className="navbar-item-text">تنظیمات</span>
                             </a>

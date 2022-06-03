@@ -63,6 +63,9 @@
 @media only screen and (max-width: 992px){
     .navbar{
         width: 8rem;
+        &-container{
+            width: 8rem;
+        }
         &-item{
             &-link{
                 justify-content: center;
