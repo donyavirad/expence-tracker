@@ -1,0 +1,27 @@
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-content{
+        position: relative;
+        top: 0;
+        background-color: var(--white);
+        padding: 2rem;
+        border-radius: .5rem;
+        z-index: 200;
+        transform-origin: top;
+        animation: modal-anime .3s ease  1  forwards;
+    }
+}
+@keyframes modal-anime {
+    from{
+        transform: scale(0.4) translateY(-100vh);
+    }to{
+        transform: scale(1) translateY(0);
+    }
+}

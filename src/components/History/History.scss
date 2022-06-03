@@ -1,0 +1,29 @@
+.history{
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+    &  h2{
+        padding-bottom: 1rem;
+        border-bottom: .1rem solid var(--dark-gray);
+    }
+    &-item{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem ;
+        border-radius: .5rem;
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+        &:first-child{
+            margin-top: 1rem;
+        }
+        
+    }
+}
+.border-income{
+    background: var(--blue2);
+}
+.border-expence {
+    background: var(--blue1);
+}

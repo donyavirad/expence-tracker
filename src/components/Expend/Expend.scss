@@ -1,0 +1,8 @@
+.expend{
+    width: 100%;
+    background: var(--blue1);
+    &-content{
+        display: flex;
+        justify-content: space-between;
+    }
+}

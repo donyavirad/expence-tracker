@@ -1,0 +1,18 @@
+.balance{
+    position: sticky;
+    top: 2rem;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    &-content{
+        display: flex;
+        flex-direction: column;
+        h2 {
+            font-weight: normal;
+        }
+    }
+    &-count{
+        font-size: 3.2rem;
+    }
+    
+}

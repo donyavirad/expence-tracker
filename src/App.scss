@@ -1,0 +1,62 @@
+:root{
+    --white:#fff;
+    --gray: #c7c9cf;
+    --dark-gray:#72787e;
+    --income-color:#22db69;
+    --expence-color:#e31c4a;
+    --primary: #c3a5f2;
+    --secondary: #0b8caa;
+    --dark-color: #00352b;
+
+    --light-gray: #f3f3f3;
+    --dark-gray: #c9c9c9;
+    --blue1: #e8f3f9;
+    --blue2: #afe1f2;
+    --blue3: #34a0c6;
+    --blue4: #11687f;
+    --blue5: #032635;
+}
+
+*, ::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.5rem;
+    font-family: vazir;
+}
+input, button {
+    font-family: inherit;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #1068f3;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    @media only screen and (min-width: 576px) {
+        max-width: 540px;
+    }
+    @media only screen and (min-width: 768px) {
+        max-width: 720px;
+    }
+    @media only screen and (min-width: 992px) {
+        max-width: 960px;
+    }
+    @media only screen and (min-width: 1200px) {
+        max-width: 1140px;
+    }
+    @media only screen and (min-width: 1400px) {
+        max-width: 1320px;
+    }
+}

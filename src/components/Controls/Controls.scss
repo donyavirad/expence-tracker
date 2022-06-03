@@ -1,0 +1,7 @@
+.controls{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr ;
+    grid-gap: 2rem;
+    padding: 0 2rem;
+    align-items: start;
+}

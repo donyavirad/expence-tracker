@@ -1,0 +1,33 @@
+.header{
+    width: 100%;
+    padding: 2rem;
+    &-container{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+        border-bottom: .3rem solid var(--dark-gray);
+    }
+    &-title h1{
+        font-size: 2.4rem;
+    }
+    &-option{
+        display: flex;
+        align-items: center;
+        &-profile{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+        }
+    }
+}
+
+.change-theme{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1rem;
+}
+.alert{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1rem;
+}

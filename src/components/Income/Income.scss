@@ -1,0 +1,8 @@
+.income{
+    width: 100%;
+    background: var(--blue2);
+    &-content{
+        display: flex;
+        justify-content: space-between;
+    }
+}

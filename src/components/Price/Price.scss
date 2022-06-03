@@ -1,0 +1,47 @@
+.price{
+    width: 45rem;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    border-radius: .5rem;
+    box-shadow: .2rem .2rem .2rem .2rem var(--gray);
+    & span{
+        color: var(--dark-gray);
+    }
+    &-balance{
+        color: var(--dark-color);
+        margin-bottom: 2rem;
+        & span{
+            font-size: 3.2rem;
+        }
+    }
+    &-status{
+        display: flex;
+        text-align: center;
+        box-shadow: .2rem .2rem .5rem 0 var(--gray);
+        &-income,&-expense{
+            flex-grow: 1;
+            padding: 1rem;
+        }
+        &-income{
+            margin-left: 1rem;
+            color: var(--income-color);
+        }
+        &-expense{
+            color: var(--expence-color);
+        }
+
+    }
+    &-button{
+        background-color: var(--secondary);
+        color: var(--white);
+        padding: 1rem 2rem;
+        outline: none;
+        border: none;
+        border-radius: .5rem;
+        margin-top: 2rem;
+        box-shadow: 0 .2rem .1rem .1rem var(--gray);
+        &:active{
+            transform: translateY(.2rem);
+        }
+    }
+}

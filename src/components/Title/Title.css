@@ -1,0 +1,9 @@
+.title{
+    text-align: center;
+    width: 100%;
+    margin: 3rem 0;
+}
+.title h1{
+    white-space: nowrap;
+    color: var(--primary);
+}

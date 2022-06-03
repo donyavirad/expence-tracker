@@ -1,0 +1,16 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    &-input{
+        outline: none;
+        border: .1rem solid var(--gray);
+        width: 35rem;
+        padding: .5rem;
+        margin-bottom: 1rem;
+    }
+    &-title{
+        margin-bottom: 2rem;
+    }
+}
