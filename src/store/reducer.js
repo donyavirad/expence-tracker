@@ -1,8 +1,11 @@
 
 const initialState = {
     data: null,
-    desc: "",
-    price: "",
+    form : {
+        price: "",
+        desc: "",
+        status: "income",
+    },
     modal: false,
 }
 
@@ -11,14 +14,36 @@ const reducer = (state = initialState, action)=>{
         case "DESCCHANGE":
             return {
                 ...state,
-                desc: action.value
+                form: {
+                    ...state.form,
+                    desc : action.value
+                }
             }
         case "NUMBERCHANGE":
             return {
                 ...state,
-                price: action.value
+                form: {
+                    ...state.form,
+                    price : action.value
+                }
             }
-        case "ONADD":
+        case "INCOME":
+            return {
+                ...state,
+                form: {
+                    ...state.form,
+                    status : action.value
+                }
+            }
+        case "EXPEND":
+            return {
+                ...state,
+                form: {
+                    ...state.form,
+                    status : action.value
+                }
+            }
+        case "ONSUBMIT":
             return {
                 ...state,
                 data: [...state.data, action.value]
