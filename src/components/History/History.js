@@ -15,7 +15,6 @@ const History = React.memo(()=>{
                     document.push(response.data[item])
                 }
                 dispatch({type: "LOADDATA", value: document})
-
             }).catch((error)=>{
                 console.log(error)
             })
@@ -33,6 +32,7 @@ const History = React.memo(()=>{
                                         key={id}
                                         price={item.price}
                                         description={item.description}
+                                        status={item.status}
                                     />
                                 )
                             }) : null}
