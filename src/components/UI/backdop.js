@@ -1,11 +1,10 @@
 import React from "react"
+import { useDispatch } from "react-redux"
 import "./Backdrop.scss"
-const Backdrop = (props)=>{
-    let content = ""
-    if(props.show){
-        content = <div className="backdrop" onClick={props.close}></div>
-    }
-    return content
+const Backdrop = ()=>{
+    const dispatch = useDispatch()
+    return <div className="backdrop" onClick={() =>dispatch({type:"CLOSEMODAL"})}></div>
+    
 }
 
 export default Backdrop

@@ -1,19 +1,21 @@
 import React from "react"
 import "./Modal.scss"
 import Backdrop from "./backdop"
+import { useSelector } from "react-redux"
 const Modal = (props)=>{
-    if(props.show){
-        return(
+    const modal = useSelector((state) => state.modal)
+    let content = ""
+    if(modal){
+        content = (
             <div className="modal">
-                <Backdrop show={props.show} close={props.close}/>
+                <Backdrop/>
                 <div className="modal-content">
                     {props.children}
                 </div>
             </div>
-        )
-    }else{
-        return <div></div>
+            )
     }
+    return content
 
 }
 

@@ -3,8 +3,10 @@ import HistoryItem from "../HistoryItem/HistoryItem"
 import "./History.scss"
 import axios from "axios"
 import Card from "../../hoc/Card"
-const History = React.memo((props)=>{
-    const {onLoaded, data} = props
+import { useDispatch, useSelector } from "react-redux"
+const History = React.memo(()=>{
+    const dispatch = useDispatch()
+    const data = useSelector((state)=> state.data)
     useEffect(()=>{
         axios.get("https://expense-tracker-62236-default-rtdb.firebaseio.com/notes.json")
             .then((response)=>{
@@ -12,7 +14,7 @@ const History = React.memo((props)=>{
                 for(let item in response.data){
                     document.push(response.data[item])
                 }
-                onLoaded(document)
+                dispatch({type: "LOADDATA", value: document})
 
             }).catch((error)=>{
                 console.log(error)
