@@ -1,7 +1,24 @@
 import React from "react"
 import "./Expend.scss"
 import Card from "../../hoc/Card"
+import { useSelector } from "react-redux"
 const Expend = () =>{
+    const data = useSelector((state)=> state.data)
+    const expend = ()=>{
+        let expends = []
+        for(let item in data){
+            if(data[item].status === "expend"){
+                const num = Number(data[item].price)
+                expends.push(num)
+            }
+        }
+        const res = expends.reduce((a,b)=>{
+            return a + b
+        }, 0)
+        
+        return res
+    }
+
     return (
         <div className="expend">
             <Card>
@@ -10,7 +27,7 @@ const Expend = () =>{
                         خرج:
                     </h3>
                     <span>
-                        230 هزار تومان
+                        {expend()} هزار تومان
                     </span>
                 </div>
             </Card>
