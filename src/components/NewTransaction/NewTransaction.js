@@ -22,49 +22,53 @@ const NewTransaction = React.memo((props)=>{
         })
     }
     return(
-        <React.Fragment>
-            <h2 className="form-title">افزودن مقدار جدید</h2>
-            <form className="form" onSubmit={submitHandler}>
-                <input 
-                    className="form-input" 
-                    type="text" 
-                    placeholder="توضیحات"
-                    value={useSelector((state)=> state.desc)}
-                    onChange={(e)=> dispatch({type: "DESCCHANGE",value: e.target.value})}
-                    required
-                />
-                <input 
-                    className="form-input" 
-                    type="number" 
-                    placeholder="مقدار"
-                    value={useSelector((state)=> state.number)}
-                    onChange={(e)=> dispatch({type: "NUMBERCHANGE",value: e.target.value})}
-                    min="0"
-                    required
-                />
-                <input 
-                    className="form-radio-button"
-                    type="radio"
-                    id="income"
-                    name="status-price"
-                    value="income"
-                    onChange={(e)=> dispatch({type: "INCOME" , value: e.target.value})}
-                    checked={status === "income" ? true : false}
-                />
-                <label htmlFor="income">درآمد</label>
-                <input 
-                    className="form-radio-button"
-                    type="radio"
-                    id="expend"
-                    name="status-price"
-                    value="expend"
-                    onChange={(e)=> dispatch({type: "EXPEND" , value: e.target.value}) }
-                    checked={status === "expend" ? true : false}
-                />
-                <label htmlFor="expend">خرج</label>
-                <button className="form-button">افزودن</button>
-            </form>
-        </React.Fragment>
+            <div className="form">
+                <h2 className="form-title">افزودن مقدار جدید</h2>
+                <form className="form-container" onSubmit={submitHandler}>
+                    <input 
+                        className="form-input" 
+                        type="text" 
+                        placeholder="توضیحات"
+                        value={useSelector((state)=> state.desc)}
+                        onChange={(e)=> dispatch({type: "DESCCHANGE",value: e.target.value})}
+                        required
+                    />
+                    <input 
+                        className="form-input" 
+                        type="number" 
+                        placeholder="مقدار"
+                        value={useSelector((state)=> state.number)}
+                        onChange={(e)=> dispatch({type: "NUMBERCHANGE",value: e.target.value})}
+                        min="0"
+                        required
+                    />
+                    <div className="form-radio">
+                        <div className="form-radio-button">
+                            <input
+                                type="radio"
+                                id="income"
+                                name="status-price"
+                                value="income"
+                                onChange={(e)=> dispatch({type: "INCOME" , value: e.target.value})}
+                                checked={status === "income" ? true : false}
+                            />
+                            <label htmlFor="income">درآمد</label>
+                        </div>
+                        <div className="form-radio-button">
+                            <input
+                                type="radio"
+                                id="expend"
+                                name="status-price"
+                                value="expend"
+                                onChange={(e)=> dispatch({type: "EXPEND" , value: e.target.value}) }
+                                checked={status === "expend" ? true : false}
+                            />
+                            <label htmlFor="expend">خرج</label>
+                        </div>
+                    </div>
+                    <button className="form-button">افزودن</button>
+                </form>
+            </div>
     )
 })
 
