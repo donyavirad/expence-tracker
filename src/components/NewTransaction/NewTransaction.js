@@ -62,7 +62,7 @@ const NewTransaction = React.memo((props)=>{
                     checked={status === "expend" ? true : false}
                 />
                 <label htmlFor="expend">خرج</label>
-                <button className="price-button">افزودن</button>
+                <button className="form-button">افزودن</button>
             </form>
         </React.Fragment>
     )

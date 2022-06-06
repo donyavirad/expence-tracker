@@ -10,7 +10,7 @@ const Balance = () =>{
                 <div className="balance-content">
                     <h2>میانگین:</h2>
                     <span className="balance-count"> 0 هزار تومان </span>
-                    <button className="price-button" onClick={() => dispatch({type:"SHOWMODAL"})}>+ افزودن</button>
+                    <button className="balance-button" onClick={() => dispatch({type:"SHOWMODAL"})}>+ افزودن</button>
                 </div>
             </Card>
         </div>

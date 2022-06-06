@@ -13,4 +13,15 @@
     &-title{
         margin-bottom: 2rem;
     }
+    &-button{
+        background-color: var(--blue3);
+        color: var(--white);
+        border: none;
+        padding: .5rem 1.5rem;
+        border-radius: .5rem;
+        box-shadow: 0 .2rem .1rem .1rem var(--dark-gray);
+        &:active{
+            transform: translateY(.2rem);
+        }
+    }
 }

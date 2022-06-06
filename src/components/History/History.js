@@ -25,7 +25,7 @@ const History = React.memo(()=>{
             <Card>
                     <h2>تاریخچه:</h2>
                     <div className="history-container">
-                        <ul>
+                        <ul className="history-list">
                             {data ? data.map((item,id)=>{
                                 return(
                                     <HistoryItem
