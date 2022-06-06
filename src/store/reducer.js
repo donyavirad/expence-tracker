@@ -7,6 +7,8 @@ const initialState = {
         status: "income",
     },
     modal: false,
+    income: 0,
+    expend: 0,
 }
 
 const reducer = (state = initialState, action)=>{
@@ -58,6 +60,16 @@ const reducer = (state = initialState, action)=>{
                 ...state,
                 modal: true,
             }
+        case "EXPENDRESULT":
+            return {
+                ...state,
+                expend: action.value,
+            }
+        case "INCOMERESULT":
+            return {
+                ...state,
+                income: action.value,
+            }
         case "LOADDATA":
             return {
                 ...state,
@@ -65,7 +77,6 @@ const reducer = (state = initialState, action)=>{
             }
         default:
             return state
-
     }
 }
 

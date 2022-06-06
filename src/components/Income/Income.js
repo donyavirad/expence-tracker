@@ -1,8 +1,9 @@
 import React from "react"
 import "./Income.scss"
 import Card from "../../hoc/Card"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 const Income = () =>{
+    const dispatch = useDispatch()
     const data = useSelector((state)=> state.data)
 
     const income = ()=>{
@@ -16,7 +17,7 @@ const Income = () =>{
         const res = incomes.reduce((a,b)=>{
             return a + b
         }, 0)
-        
+        dispatch({type:"INCOMERESULT", value: res})
         return res
     }
     return (
