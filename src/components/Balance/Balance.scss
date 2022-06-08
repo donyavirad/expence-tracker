@@ -4,6 +4,7 @@
     grid-column-start: 3;
     grid-row-start: 1;
     grid-row-end: 3;
+    background-color: var(--white);
     @media only screen and (max-width: 992px){
         position: static;
         grid-column-start: 1;

@@ -1,6 +1,8 @@
 .main{
     display: flex;
-}
-.flex-grow{
-    flex-grow: 1;
+    flex-wrap: wrap;
+    &-container{
+        display: flex;
+        width: 100%;
+    }
 }

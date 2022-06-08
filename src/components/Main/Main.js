@@ -8,9 +8,9 @@ const Main = ()=>{
     return(
         <main className="main">
             <IconContext.Provider value={{color:"#11687f"}} >
-                <Navbar/>
-                <div className="flex-grow">
-                    <Header/>
+                <Header/>
+                <div className="main-container">
+                    <Navbar/>
                     <Controls/>
                 </div>
             </IconContext.Provider>

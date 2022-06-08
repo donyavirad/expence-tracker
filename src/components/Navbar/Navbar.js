@@ -4,14 +4,12 @@ import { AiFillDashboard } from "react-icons/ai";
 import { IoMdAddCircle } from "react-icons/io";
 import { IoWallet } from "react-icons/io5";
 import { IoSettings } from "react-icons/io5";
-import logoPic from "../../assets/images/logo.png"
+
 const Navbar = () =>{
     return(
         <div className="navbar">
             <div className="navbar-container">
-                <div className="navbar-logo">
-                    <img src={logoPic}/>
-                </div>
+                
                 <nav className="navbar-nav">
                     <ul className="navbar-list">
                         <li className="navbar-item">

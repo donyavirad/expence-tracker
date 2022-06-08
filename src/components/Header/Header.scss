@@ -1,14 +1,29 @@
 .header{
     width: 100%;
-    padding: 2rem;
     &-container{
         display: flex;
         justify-content: space-between;
-        padding-bottom: 2rem;
+        padding: 2rem;
         border-bottom: .3rem solid var(--dark-gray);
     }
-    &-title h1{
-        font-size: 2.4rem;
+    &-title {
+        display: flex;
+        align-items: center;
+        @media only screen and (max-width: 576px){
+            h1 {
+                display: none;
+            }
+        }
+        h1{
+            font-size: 2.4rem;
+        }
+    }
+    &-logo{
+        margin-left: 1rem;
+        img{ 
+            width: 4rem;
+            display: block;
+        }
     }
     &-option{
         display: flex;

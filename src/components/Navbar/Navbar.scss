@@ -2,25 +2,13 @@
     position: relative;
     width: 15rem;
     &-container{
-        position: fixed;
+        position: sticky;
         width: 15rem;
         height: 100vh;
         top: 0;
         right: 0;
         padding: 2rem 0;
         background-color: var(--blue1);
-    }
-    &-logo{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-bottom: 3px solid var(--dark-gray);
-        margin: 0 2rem;
-        padding-bottom: 2rem;
-        margin-bottom: 2rem;
-        img{ 
-            width: 4rem;
-        }
     }
     &-item{
         position: relative;
