@@ -5,7 +5,10 @@ import { useSelector, useDispatch } from "react-redux"
 const Income = () =>{
     const dispatch = useDispatch()
     const data = useSelector((state)=> state.data)
-
+    let resIncom = null
+    if(resIncom){
+        dispatch({type:"INCOMERESULT", value: resIncom})
+    }
     const income = ()=>{
         let incomes = []
         for(let item in data){
@@ -14,11 +17,11 @@ const Income = () =>{
                 incomes.push(num)
             }
         }
-        const res = incomes.reduce((a,b)=>{
+        resIncom = incomes.reduce((a,b)=>{
             return a + b
         }, 0)
-        dispatch({type:"INCOMERESULT", value: res})
-        return res
+        
+        return resIncom
     }
     return (
         <div className="income">

@@ -5,6 +5,10 @@ import { useSelector, useDispatch } from "react-redux"
 const Expend = () =>{
     const dispatch = useDispatch()
     const data = useSelector((state)=> state.data)
+    let resExpend = null
+    if(resExpend){
+        dispatch({type:"EXPENDRESULT", value: resExpend})
+    }
     const expend = ()=>{
         let expends = []
         for(let item in data){
@@ -13,11 +17,10 @@ const Expend = () =>{
                 expends.push(num)
             }
         }
-        const res = expends.reduce((a,b)=>{
+        resExpend = expends.reduce((a,b)=>{
             return a + b
         }, 0)
-        dispatch({type:"EXPENDRESULT", value: res})
-        return res
+        return resExpend
     }
 
     return (

@@ -19,6 +19,7 @@ const NewTransaction = React.memo((props)=>{
         .then(()=>{
             dispatch({type:"CLOSEMODAL"})
             dispatch({type:"ONSUBMIT", value: data})
+            dispatch({type:"SUCCESS", value: "success"})
         })
     }
     return(

@@ -9,6 +9,7 @@ const initialState = {
     modal: false,
     income: 0,
     expend: 0,
+    notification: "",
 }
 
 const reducer = (state = initialState, action)=>{
@@ -75,6 +76,20 @@ const reducer = (state = initialState, action)=>{
                 ...state,
                 data: action.value
             }
+
+        // notifications
+
+        case "SUCCESS":
+            return{
+                ...state,
+                notification: "success"
+            }
+        case "CLEARNOTIFICATION":
+            return{
+                ...state,
+                notification: ""
+            }
+
         default:
             return state
     }

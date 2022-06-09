@@ -3,6 +3,7 @@ import Controls from "../Controls/Controls"
 import Header from "../Header/Header"
 import Navbar from "../Navbar/Navbar"
 import { IconContext } from "react-icons"
+import Notification from "../Notification/Notification"
 import "./Main.scss"
 const Main = ()=>{
     return(
@@ -13,6 +14,7 @@ const Main = ()=>{
                     <Navbar/>
                     <Controls/>
                 </div>
+                <Notification/>
             </IconContext.Provider>
         </main>
     )
