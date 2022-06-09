@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "./Income.scss"
 import Card from "../../hoc/Card"
 import { useSelector, useDispatch } from "react-redux"
@@ -6,9 +6,7 @@ const Income = () =>{
     const dispatch = useDispatch()
     const data = useSelector((state)=> state.data)
     let resIncom = null
-    if(resIncom){
-        dispatch({type:"INCOMERESULT", value: resIncom})
-    }
+    
     const income = ()=>{
         let incomes = []
         for(let item in data){
@@ -23,6 +21,9 @@ const Income = () =>{
         
         return resIncom
     }
+    useEffect(()=>{
+        dispatch({type:"INCOMERESULT", value: resIncom})
+    },[data])
     return (
         <div className="income">
             <Card>

@@ -5,6 +5,7 @@ const initialState = {
         price: "",
         desc: "",
         status: "income",
+        loading: false,
     },
     modal: false,
     income: 0,
@@ -14,6 +15,9 @@ const initialState = {
 
 const reducer = (state = initialState, action)=>{
     switch(action.type){
+
+        // form
+
         case "DESCCHANGE":
             return {
                 ...state,
@@ -49,8 +53,29 @@ const reducer = (state = initialState, action)=>{
         case "ONSUBMIT":
             return {
                 ...state,
-                data: [...state.data, action.value]
+                data: [action.value ,...state.data]
             }
+        case "STARTLOADING":
+            return {
+                ...state,
+                form: {
+                    ...state.form,
+                    loading : true
+                }
+            }
+        case "ENDLOADING":
+            return {
+                ...state,
+                form: {
+                    ...state.form,
+                    loading : false
+                }
+            }
+
+            // end form 
+
+            // modal 
+
         case "CLOSEMODAL":
             return {
                 ...state,
@@ -61,24 +86,11 @@ const reducer = (state = initialState, action)=>{
                 ...state,
                 modal: true,
             }
-        case "EXPENDRESULT":
-            return {
-                ...state,
-                expend: action.value,
-            }
-        case "INCOMERESULT":
-            return {
-                ...state,
-                income: action.value,
-            }
-        case "LOADDATA":
-            return {
-                ...state,
-                data: action.value
-            }
 
-        // notifications
+            // end modal 
 
+            // notifications 
+    
         case "SUCCESS":
             return{
                 ...state,
@@ -89,6 +101,25 @@ const reducer = (state = initialState, action)=>{
                 ...state,
                 notification: ""
             }
+
+            // end notifications 
+
+        case "INCOMERESULT":
+            return {
+                ...state,
+                income: action.value,
+            }
+        case "EXPENDRESULT":
+            return {
+                ...state,
+                expend: action.value,
+            }
+        case "LOADDATA":
+            return {
+                ...state,
+                data: action.value
+            }
+
 
         default:
             return state

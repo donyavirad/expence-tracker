@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./Expend.scss"
 import Card from "../../hoc/Card"
 import { useSelector, useDispatch } from "react-redux"
@@ -6,9 +6,7 @@ const Expend = () =>{
     const dispatch = useDispatch()
     const data = useSelector((state)=> state.data)
     let resExpend = null
-    if(resExpend){
-        dispatch({type:"EXPENDRESULT", value: resExpend})
-    }
+    
     const expend = ()=>{
         let expends = []
         for(let item in data){
@@ -20,8 +18,13 @@ const Expend = () =>{
         resExpend = expends.reduce((a,b)=>{
             return a + b
         }, 0)
+
         return resExpend
     }
+
+    useEffect(()=>{
+        dispatch({type:"EXPENDRESULT", value: resExpend})
+    },[data])
 
     return (
         <div className="expend">

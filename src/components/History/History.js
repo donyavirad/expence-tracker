@@ -14,6 +14,16 @@ const History = React.memo(()=>{
                 for(let item in response.data){
                     document.push(response.data[item])
                 }
+                document.sort((a,b)=>{
+                    if(a.createdAt < b.createdAt){
+                        return 1
+                    }
+                    if(a.createdAt > b.createdAt){
+                        return -1
+                    }
+                    return 0
+                })
+                console.log(document)
                 dispatch({type: "LOADDATA", value: document})
             }).catch((error)=>{
                 console.log(error)

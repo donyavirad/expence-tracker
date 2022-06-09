@@ -8,15 +8,21 @@ const NewTransaction = React.memo((props)=>{
     const desc = useSelector((state)=> state.form.desc)
     const price = useSelector((state)=> state.form.price)
     const status = useSelector((state)=> state.form.status)
+    const loading = useSelector((state)=> state.form.loading)
     const submitHandler = (e)=>{
         e.preventDefault()
+        const createdAt = new Date().getTime()
         const data = {
             description: desc,
             price: price,
-            status: status
+            status: status,
+            createdAt: createdAt,
         }
+        dispatch({type:"STARTLOADING"})
+
         axios.post("https://expense-tracker-62236-default-rtdb.firebaseio.com/notes.json", data)
         .then(()=>{
+            dispatch({type:"ENDLOADING"})
             dispatch({type:"CLOSEMODAL"})
             dispatch({type:"ONSUBMIT", value: data})
             dispatch({type:"SUCCESS", value: "success"})
@@ -67,7 +73,11 @@ const NewTransaction = React.memo((props)=>{
                             <label htmlFor="expend">خرج</label>
                         </div>
                     </div>
-                    <button className="form-button">افزودن</button>
+                    <button 
+                        className={loading ? "form-button form-loading": "form-button"}
+                            disabled={loading? true : false}>
+                            افزودن
+                    </button>
                 </form>
             </div>
     )
