@@ -15,8 +15,8 @@ const Header= ()=>{
                 <h1>نرم افزار مدیریت مالی</h1>
             </div>
             <div className="header-option">
-                <IoMoonSharp className="change-theme"/>
-                <IoIosNotifications className="alert"/>
+                <IoMoonSharp className="header-option-theme"/>
+                <IoIosNotifications className="header-option-notification"/>
                 <img src={profile} className="header-option-profile"/>
             </div>
         </div>

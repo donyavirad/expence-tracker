@@ -8,7 +8,7 @@ import "./Main.scss"
 const Main = ()=>{
     return(
         <main className="main">
-            <IconContext.Provider value={{color:"#11687f"}} >
+            <IconContext.Provider value={{color:"#7E84A3"}} >
                 <Header/>
                 <div className="main-container">
                     <Navbar/>

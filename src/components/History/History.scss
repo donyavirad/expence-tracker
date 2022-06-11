@@ -2,6 +2,7 @@
     width: 100%;
     grid-column-start: 1;
     grid-column-end: 3;
+    background-color: var(--white);
     @media only screen and (max-width: 992px){
         grid-column-start: 1;
         grid-column-end: 3;
@@ -13,21 +14,27 @@
     }
     &  h2{
         padding-bottom: 1rem;
-        border-bottom: .1rem solid var(--dark-gray);
+        border-bottom: .1rem solid var(--light-gray);
         font-weight: normal;
-        color: var(--dark-gray);
+        color: var(--text-color);
     }
     &-item{
         display: flex;
         justify-content: space-between;
         padding: 1rem ;
         border-radius: .5rem;
-        color: var(--blue4);
         &:not(:last-child){
             margin-bottom: 1rem;
         }
         &:first-child{
             margin-top: 1rem;
+        }
+        &-desc{
+            color: var(--text-color);
+        }
+        &-price{
+            color: var(--text-color);
+            font-weight: bold;
         }
         
     }

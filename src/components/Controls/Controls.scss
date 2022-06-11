@@ -5,6 +5,7 @@
     padding: 2rem 2rem;
     align-items: start;
     flex-grow: 1;
+    background-color: var(--background);
     @media only screen and (max-width: 992px){
         grid-template-columns: 1fr 1fr;
     }
