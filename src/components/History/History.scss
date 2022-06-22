@@ -29,20 +29,28 @@
         &:first-child{
             margin-top: 1rem;
         }
+        &:nth-child(odd){
+            background-color: var(--list-color-odd);
+        }
+        &:nth-child(even){
+            background-color: var(--list-color-even);
+        }
         &-desc{
+            display: flex;
+            align-items: center;
             color: var(--text-color);
         }
         &-price{
             color: var(--text-color);
             font-weight: bold;
+            &-income{
+                color: var(--income);
+            }
+            &-expend{
+                color: var(--expend);
+            }
         }
         
     }
     
-}
-.border-income{
-    background: var(--blue2);
-}
-.border-expence {
-    background: var(--blue1);
 }

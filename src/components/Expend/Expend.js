@@ -30,7 +30,7 @@ const Expend = () =>{
         <div className="expend">
             <Card>
                 <div className="expend-content">
-                    <h3>
+                    <h3 className="expend-element">
                         خرج:
                     </h3>
                     <span>

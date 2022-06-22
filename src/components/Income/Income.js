@@ -28,7 +28,7 @@ const Income = () =>{
         <div className="income">
             <Card>
                 <div className="income-content">
-                    <h3>
+                    <h3 className="income-element">
                         درآمد:
                     </h3>
                     <span>
