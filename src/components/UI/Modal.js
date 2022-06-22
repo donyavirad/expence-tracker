@@ -2,6 +2,7 @@ import React from "react"
 import "./Modal.scss"
 import Backdrop from "./backdop"
 import { useSelector } from "react-redux"
+import { motion } from "framer-motion"
 const Modal = (props)=>{
     const modal = useSelector((state) => state.modal)
     let content = ""
@@ -9,9 +10,13 @@ const Modal = (props)=>{
         content = (
             <div className="modal">
                 <Backdrop/>
-                <div className="modal-content">
+                <motion.div 
+                    className="modal-content"
+                    initial={{y:"-100vh",opacity:0}}
+                    animate={{y:0,opacity:1}}
+                    >
                     {props.children}
-                </div>
+                </motion.div>
             </div>
             )
     }

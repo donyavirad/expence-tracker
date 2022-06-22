@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import "./Expend.scss"
 import Card from "../../hoc/Card"
 import { useSelector, useDispatch } from "react-redux"
+import { motion } from "framer-motion"
 const Expend = () =>{
     const dispatch = useDispatch()
     const data = useSelector((state)=> state.data)
@@ -27,7 +28,11 @@ const Expend = () =>{
     },[data])
 
     return (
-        <div className="expend">
+        <motion.div 
+            className="expend"
+            initial={{y: -50,opacity:0}}
+            animate={{y: 0,opacity:1}}
+            transition={{delay:.5,duration:1}} >
             <Card>
                 <div className="expend-content">
                     <h3 className="expend-element">
@@ -38,7 +43,7 @@ const Expend = () =>{
                     </span>
                 </div>
             </Card>
-        </div>
+        </motion.div>
     )
 }
 

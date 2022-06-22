@@ -4,6 +4,7 @@ import "./History.scss"
 import axios from "axios"
 import Card from "../../hoc/Card"
 import { useDispatch, useSelector } from "react-redux"
+import { motion } from "framer-motion"
 const History = React.memo(()=>{
     const dispatch = useDispatch()
     const data = useSelector((state)=> state.data)
@@ -31,7 +32,12 @@ const History = React.memo(()=>{
     },[])
 
     return (
-        <div className="history">
+        <motion.div
+            className="history"
+            initial={{y: -50,opacity:0}}
+            animate={{y: 0,opacity:1}}
+            transition={{delay:1,duration:1}}
+         >
             <Card>
                     <h2>تاریخچه:</h2>
                     <div className="history-container">
@@ -49,7 +55,7 @@ const History = React.memo(()=>{
                         </ul>
                     </div>
             </Card>
-        </div>
+        </motion.div>
     )
 })
 

@@ -2,6 +2,7 @@ import React from "react"
 import "./Balance.scss"
 import Card from "../../hoc/Card"
 import { useDispatch, useSelector } from "react-redux"
+import { motion } from "framer-motion"
 const Balance = () =>{
     const dispatch = useDispatch()
     const income = useSelector((state)=> state.income)
@@ -10,7 +11,11 @@ const Balance = () =>{
         return income - expend
     }
     return (
-        <div className="balance">
+        <motion.div 
+            className="balance"
+            initial={{y: -50,opacity:0}}
+            animate={{y: 0,opacity:1}}
+            transition={{delay:.5,duration:1}}>
             <Card>
                 <div className="balance-content">
                     <h2>میانگین:</h2>
@@ -18,7 +23,7 @@ const Balance = () =>{
                     <button className="balance-button" onClick={() => dispatch({type:"SHOWMODAL"})}>+ افزودن</button>
                 </div>
             </Card>
-        </div>
+        </motion.div>
     )
 }
 

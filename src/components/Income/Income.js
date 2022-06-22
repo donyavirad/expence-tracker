@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import "./Income.scss"
 import Card from "../../hoc/Card"
 import { useSelector, useDispatch } from "react-redux"
+import { motion } from "framer-motion"
 const Income = () =>{
     const dispatch = useDispatch()
     const data = useSelector((state)=> state.data)
@@ -25,7 +26,12 @@ const Income = () =>{
         dispatch({type:"INCOMERESULT", value: resIncom})
     },[data])
     return (
-        <div className="income">
+        <motion.div 
+            className="income"
+            initial={{y: -50,opacity:0}}
+            animate={{y: 0,opacity:1}}
+            transition={{delay:.5,duration:1}}
+            >
             <Card>
                 <div className="income-content">
                     <h3 className="income-element">
@@ -36,7 +42,7 @@ const Income = () =>{
                     </span>
                 </div>
             </Card>
-        </div>
+        </motion.div>
     )
 }
 
