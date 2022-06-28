@@ -32,13 +32,7 @@ const History = React.memo(()=>{
     },[])
 
     return (
-        <motion.div
-            className="history"
-            initial={{y: -50,opacity:0}}
-            animate={{y: 0,opacity:1}}
-            transition={{delay:1,duration:1}}
-         >
-            <Card>
+            <Card className="history">
                     <h2>تاریخچه:</h2>
                     <div className="history-container">
                         <ul className="history-list">
@@ -55,7 +49,6 @@ const History = React.memo(()=>{
                         </ul>
                     </div>
             </Card>
-        </motion.div>
     )
 })
 

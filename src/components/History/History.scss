@@ -3,6 +3,7 @@
     grid-column-start: 1;
     grid-column-end: 3;
     background-color: var(--white);
+    transition: all .3s;
     @media only screen and (max-width: 992px){
         grid-column-start: 1;
         grid-column-end: 3;
@@ -23,6 +24,7 @@
         justify-content: space-between;
         padding: 1rem ;
         border-radius: .5rem;
+        transition: all .3s;
         &:not(:last-child){
             margin-bottom: 1rem;
         }
@@ -53,4 +55,17 @@
         
     }
     
+}
+
+#dark .history{
+    background-color: var(--dark-background);
+    &  h2{
+        color: var(--dark-text-color);
+    }
+    &-item{
+        background-color: var(--dark-background-item);
+        &-desc,&-price{
+            color: var(--dark-text-color);
+        }
+    }
 }

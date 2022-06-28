@@ -11,6 +11,7 @@ const initialState = {
     income: 0,
     expend: 0,
     notification: "",
+    theme: "light",
 }
 
 const reducer = (state = initialState, action)=>{
@@ -120,6 +121,13 @@ const reducer = (state = initialState, action)=>{
                 data: action.value
             }
 
+        // change theme color
+
+        case "CHANGETHEME":
+            return{
+                ...state,
+                theme: state.theme === "light" ? "dark": "light"
+            }
 
         default:
             return state

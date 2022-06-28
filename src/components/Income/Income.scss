@@ -1,6 +1,7 @@
 .income{
     width: 100%;
     background: var(--white);
+    transition: all .3s;
     &-content{
         display: flex;
         justify-content: space-between;
@@ -27,4 +28,16 @@
         }
     }
     
+}
+
+#dark .income{
+    background: var(--dark-background);
+    &-content{
+        > h3{
+            color: var(--dark-text-color);
+        }
+        >span{
+            color: var(--dark-title-color);
+        }
+    }
 }

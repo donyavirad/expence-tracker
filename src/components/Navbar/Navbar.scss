@@ -1,5 +1,6 @@
 .navbar{
     position: relative;
+    transition: all .3s;
     &-container{
         position: sticky;
         width: 15rem;
@@ -41,6 +42,9 @@
                 height: 2.5rem;
             }
         }
+        &-icon{
+            color: var(--text-color);
+        }
         &-text{
             color: var(--blue5);
             margin-right: 1rem;
@@ -55,6 +59,7 @@
             width: 6rem;
         }
         &-item{
+            
             &-link{
                 justify-content: center;
                 padding: 1rem 2rem;
@@ -62,6 +67,21 @@
             &-text{
                 display: none;
             }
+        }
+    }
+}
+
+#dark .navbar{
+    background-color: var(--dark-background);
+    &-item{
+        &:hover{
+            background-color: var(--dark-background2);
+        }
+        &-text{
+            color: var(--dark-text-color);
+        }
+        &-icon{
+            color: var(--dark-text-color);
         }
     }
 }

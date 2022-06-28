@@ -1,5 +1,6 @@
 .header{
     width: 100%;
+    transition: all .3s;
     &-container{
         display: flex;
         justify-content: space-between;
@@ -35,6 +36,7 @@
             box-sizing: content-box;
             transition: all .3s ease;
             padding: .5rem;
+            color: var(--text-color);
             border-radius: 1rem;
             cursor: pointer;
             &:hover{
@@ -52,6 +54,25 @@
             &:hover{
                 border: .2rem solid var(--blue3);
             }
+        }
+    }
+}
+
+#dark .header{
+    background-color: var(--dark-background);
+    color: var(--white);
+    &-container{
+        box-shadow: none;
+    }
+    &-option{
+        &-notification,&-theme{
+            color: var(--dark-text-color);
+            &:hover{
+                background-color: var(--dark-background2);
+            }
+        }
+        &-profile{
+            border: .2rem solid var(--dark-background);
         }
     }
 }

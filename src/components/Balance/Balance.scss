@@ -5,6 +5,7 @@
     grid-row-start: 1;
     grid-row-end: 3;
     background-color: var(--white);
+    transition: all .3s;
     @media only screen and (max-width: 992px){
         position: static;
         grid-column-start: 1;
@@ -42,4 +43,16 @@
         }
     }
     
+}
+
+#dark .balance{
+    background-color: var(--dark-background);
+    &-content{
+        h2{
+            color: var(--dark-text-color);
+        }
+    }
+    &-count{
+        color: var(--dark-title-color);
+    }
 }
