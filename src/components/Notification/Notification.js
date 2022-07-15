@@ -5,13 +5,14 @@ import { ToastContainer, toast } from "react-toastify"
  import "react-toastify/dist/ReactToastify.css"
 
 const Notification = ()=>{
-    let notification = useSelector((state)=> state.notification)
+    const notification = useSelector((state)=> state.notification)
+    const theme = useSelector((state) => state.theme)
     const dispatch = useDispatch()
     useEffect(()=>{
         const typeOfNotification = () =>{
             switch(notification){
                 case "success":
-                    toast.success('تسک شما با موفقیت اضافه گردید.🥳', {
+                    toast.success(' عملیات با موفقیت انجام شد. 🥳', {
                         position: "top-center",
                         autoClose: 5000,
                         hideProgressBar: false,
@@ -19,6 +20,7 @@ const Notification = ()=>{
                         pauseOnHover: true,
                         draggable: true,
                         progress: undefined,
+
                         })
                     break
             }
@@ -34,10 +36,11 @@ const Notification = ()=>{
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
-                rtl={false}
+                rtl={true}
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
+                theme={theme}
                 />
         </div>
     )
