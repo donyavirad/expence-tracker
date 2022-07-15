@@ -7,7 +7,9 @@ const Balance = () =>{
     const income = useSelector((state)=> state.income)
     const expend = useSelector((state)=> state.expend)
     const balance = ()=>{
-        return income - expend
+        const num = income - expend
+        const res = num.toLocaleString()
+        return res
     }
     return (
         <Card className="balance">
@@ -15,7 +17,7 @@ const Balance = () =>{
                 className="balance-content"
             >
                 <h2>میانگین:</h2>
-                <span className="balance-count"> {balance()} هزار تومان </span>
+                <span className="balance-count"> {balance()} تومان </span>
                 <button className="balance-button" onClick={() => dispatch({type:"SHOWMODAL"})}>+ افزودن</button>
             </div>
         </Card>

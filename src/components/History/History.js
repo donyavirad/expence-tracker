@@ -4,7 +4,6 @@ import "./History.scss"
 import axios from "axios"
 import Card from "../../hoc/Card"
 import { useDispatch, useSelector } from "react-redux"
-import { motion } from "framer-motion"
 const History = React.memo(()=>{
     const dispatch = useDispatch()
     const data = useSelector((state)=> state.data)
@@ -24,7 +23,6 @@ const History = React.memo(()=>{
                     }
                     return 0
                 })
-                console.log(document)
                 dispatch({type: "LOADDATA", value: document})
             }).catch((error)=>{
                 console.log(error)

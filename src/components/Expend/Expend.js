@@ -18,8 +18,8 @@ const Expend = () =>{
         resExpend = expends.reduce((a,b)=>{
             return a + b
         }, 0)
-
-        return resExpend
+        const res = resExpend.toLocaleString()
+        return res
     }
 
     useEffect(()=>{
@@ -33,7 +33,7 @@ const Expend = () =>{
                     خرج:
                 </h3>
                 <span>
-                    {expend()} هزار تومان
+                    {expend()} تومان
                 </span>
             </div>
         </Card>

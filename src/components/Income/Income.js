@@ -18,8 +18,8 @@ const Income = () =>{
         resIncom = incomes.reduce((a,b)=>{
             return a + b
         }, 0)
-        
-        return resIncom
+        const res = resIncom.toLocaleString()
+        return res
     }
     useEffect(()=>{
         dispatch({type:"INCOMERESULT", value: resIncom})
@@ -31,7 +31,7 @@ const Income = () =>{
                         درآمد:
                     </h3>
                     <span>
-                        {income()} هزار تومان
+                        {income()}  تومان
                     </span>
                 </div>
             </Card>
