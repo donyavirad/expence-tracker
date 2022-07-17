@@ -26,7 +26,9 @@ const Header= ()=>{
                  : <IoIosSunny className="header-option-theme" onClick={changeTheme}/>}
                 
                 <IoIosNotifications className="header-option-notification"/>
-                <img src={profile} className="header-option-profile"/>
+                <a target="_blank" href="https://github.com/donyavirad">
+                    <img src={profile} className="header-option-profile"/>
+                </a>
             </div>
         </div>
     </div>
