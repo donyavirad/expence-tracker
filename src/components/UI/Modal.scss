@@ -16,3 +16,9 @@
         z-index: 200;
     }
 }
+
+#dark .modal{
+    &-content{
+        background-color: var(--dark-background);
+    }
+}
