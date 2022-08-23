@@ -11,14 +11,10 @@ const initialState = {
     income: 0,
     expend: 0,
     notification: "",
-    theme: "light",
 }
 
 const reducer = (state = initialState, action)=>{
     switch(action.type){
-
-        // form
-
         case "DESCCHANGE":
             return {
                 ...state,
@@ -49,27 +45,6 @@ const reducer = (state = initialState, action)=>{
                 form: {
                     ...state.form,
                     status : action.value
-                }
-            }
-        case "ONSUBMIT":
-            return {
-                ...state,
-                data: [action.value ,...state.data]
-            }
-        case "STARTLOADING":
-            return {
-                ...state,
-                form: {
-                    ...state.form,
-                    loading : true
-                }
-            }
-        case "ENDLOADING":
-            return {
-                ...state,
-                form: {
-                    ...state.form,
-                    loading : false
                 }
             }
 
@@ -121,13 +96,6 @@ const reducer = (state = initialState, action)=>{
                 data: action.value
             }
 
-        // change theme color
-
-        case "CHANGETHEME":
-            return{
-                ...state,
-                theme: state.theme === "light" ? "dark": "light"
-            }
 
         default:
             return state

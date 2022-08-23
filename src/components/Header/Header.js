@@ -1,37 +1,42 @@
 import React from "react"
-import "./Header.scss"
-import { IoMoonSharp } from "react-icons/io5";
-import { IoIosNotifications } from "react-icons/io";
-import { IoIosSunny } from "react-icons/io";
-import profile from "../../assets/images/profile.png"
-import logoPic from "../../assets/images/logo.png"
-import { useDispatch, useSelector } from "react-redux/es/exports";
+import "./Header.css"
+import Stack from '@mui/material/Stack'
+import MenuIcon from '@mui/icons-material/Menu';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import IconButton from '@mui/material/IconButton'
+import { Avatar, Box } from "@mui/material";
+import {  deepPurple } from '@mui/material/colors'
+import { Container, Link, Typography } from "@mui/material";
 const Header= ()=>{
-    const dispatch = useDispatch()
-    const theme = useSelector((state)=> state.theme)
-    const changeTheme = ()=>{
-       dispatch({type:"CHANGETHEME"})
-    }
     return (
-    <div className="header">
-        <div className="header-container">
-            <div className="header-title">
-                <div className="header-logo">
-                    <img src={logoPic}/>
-                </div>
-                <h1>نرم افزار مدیریت مالی</h1>
-            </div>
-            <div className="header-option" >
-                {theme === "light" ? <IoMoonSharp className="header-option-theme" onClick={changeTheme}/>
-                 : <IoIosSunny className="header-option-theme" onClick={changeTheme}/>}
-                
-                <IoIosNotifications className="header-option-notification"/>
-                <a target="_blank" href="https://github.com/donyavirad">
-                    <img src={profile} className="header-option-profile"/>
-                </a>
-            </div>
-        </div>
-    </div>
+        <Box sx={{
+            width: "100%",
+            padding: "16px 0"
+        }}>
+            <Container>
+                <Box sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                }}>
+                    <Stack direction={"row"} alignItems={"center"}>
+                        <IconButton>
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant="h1" component="h1" className="header-title" sx={{fontSize: "16px",fontWeight: "bold"}}>
+                            Dashboard
+                        </Typography>
+                    </Stack>
+                    <Stack direction={"row"} spacing={1}>
+                        <IconButton>
+                            <NotificationsIcon />
+                        </IconButton>
+                        <Link target="_blank" sx={{display: "flex", alignItems: "center", justifyContent: "center"}} href="https://github.com/donyavirad">
+                            <Avatar  sx={{ bgcolor: deepPurple[500] }}>D</Avatar>
+                        </Link>
+                    </Stack>
+                </Box>
+            </Container>
+        </Box>
     )
 }
 

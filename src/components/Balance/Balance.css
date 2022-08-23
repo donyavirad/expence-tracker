@@ -1,0 +1,5 @@
+@media only screen and (max-width: 992px){
+    .balance{
+        position: static !important;
+    }
+} 

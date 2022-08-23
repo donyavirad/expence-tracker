@@ -1,22 +1,19 @@
 import React from "react"
 import Controls from "../Controls/Controls"
 import Header from "../Header/Header"
-import Navbar from "../Navbar/Navbar"
-import { IconContext } from "react-icons"
 import Notification from "../Notification/Notification"
-import "./Main.scss"
 import { useSelector } from "react-redux/es/exports"
 const Main = ()=>{
     const currentTheme = useSelector((state)=> state.theme)
-        
+    const stringStorage = localStorage.getItem("expence-tracker-local")
+    if(!stringStorage){
+        localStorage.setItem("expence-tracker-local", "[]")
+    }
     return(
-        <main className="main" id={currentTheme}>
-                <Header/>
-                <div className="main-container">
-                    <Navbar/>
-                    <Controls/>
-                </div>
-                <Notification/>
+        <main  id={currentTheme}>
+            <Header/>
+            <Controls/>
+            <Notification/>
         </main>
     )
 }

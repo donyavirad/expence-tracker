@@ -1,0 +1,9 @@
+.form{
+    background-color: white;
+    padding: 2rem;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

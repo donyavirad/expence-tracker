@@ -1,0 +1,24 @@
+
+.history-add-button{
+    background: rgb(28,176,225);
+    background: linear-gradient(135deg, rgba(28,176,225,1) 0%, rgba(134,132,243,1) 25%, rgba(197,105,254,1) 50%, rgba(226,123,191,1) 75%, rgba(254,150,109,1) 100%);
+     
+}
+.history-item{
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 4px;
+}
+.history-item:nth-child(2){
+    margin-top: 12px;
+}
+.history-item:not(:last-child){
+    margin-bottom: 8px;
+}
+.history-item-image{
+    width: 32px;
+}
+.history-item-note{
+    margin-left: 8px;
+    font-weight: bold;
+}

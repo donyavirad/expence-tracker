@@ -1,18 +1,16 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import "./Notification.scss"
 import { ToastContainer, toast } from "react-toastify"
  import "react-toastify/dist/ReactToastify.css"
 
 const Notification = ()=>{
     const notification = useSelector((state)=> state.notification)
-    const theme = useSelector((state) => state.theme)
     const dispatch = useDispatch()
     useEffect(()=>{
         const typeOfNotification = () =>{
             switch(notification){
                 case "success":
-                    toast.success(' عملیات با موفقیت انجام شد. 🥳', {
+                    toast.success('Your transaction has been successfully added. 🥳', {
                         position: "top-center",
                         autoClose: 5000,
                         hideProgressBar: false,
@@ -20,7 +18,6 @@ const Notification = ()=>{
                         pauseOnHover: true,
                         draggable: true,
                         progress: undefined,
-
                         })
                     break
             }
@@ -36,11 +33,10 @@ const Notification = ()=>{
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
-                rtl={true}
+                rtl={false}
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                theme={theme}
                 />
         </div>
     )
